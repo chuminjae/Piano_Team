@@ -14,6 +14,7 @@
     <div>Piano player</div>
     <button type="button" onclick="init()">Start</button>
     <input id="name" onkeyup="printName()" />
+    <div id="result"></div>
     <div><canvas id="canvas"></canvas></div>
     <div id="label-container"></div>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
@@ -30,6 +31,8 @@
       let model, webcam, ctx, labelContainer, maxPredictions;
       async function printName() {
         const name = document.getElementById("name").value;
+        document.getElementById("result").innerText =
+          name + "개의 건반을 녹음합니다";
       }
       async function play() {
         count = 0;
